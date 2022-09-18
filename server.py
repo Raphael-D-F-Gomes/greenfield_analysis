@@ -1,5 +1,5 @@
 import pandas as pd
-from flask import Flask, render_template, request, g
+from flask import Flask, render_template, request
 import os
 from error_analysis import ErrorAnalysis
 import sys
@@ -99,5 +99,3 @@ if __name__ == '__main__':
         host_string = sys.argv[1]
 
     app.run(host=host_string, debug=True, threaded=False)
-
-

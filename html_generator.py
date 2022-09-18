@@ -22,7 +22,6 @@ def html_generator(alerts, errors, df_customers, df_suppliers, statistics):
                         '''
     else:
 
-        statistics_title = 'Main Statistics:'
         maximum_demand = f"* The client {statistics['maximum_demand']['Name']}" \
                          f" has the highest fixed demand of {statistics['maximum_demand']['Value']}"
         maximum_supply = f"* The supplier {statistics['maximum_supply']['Name']}" \
