@@ -7,22 +7,101 @@
                     </head>
                     <body>
                         <h1> Errors and Alerts found in the file </h1>
-                        <h2> Errors founded: </h2>
-                        <p> <p>
-*  Negative value for Fixed Demand from the customer CD_Arena</p><p>
-*  Negative value for Fixed Demand from the customer BY_Conceição</p> </p>
-                        <h2> 
-Alerts founded: </h2>
-                        <p> <p>
-* Column StaBBtus is not a expected column in locations table</p><p>
-* Name CD_Estrada is duplicated in Suppliers</p><p>
-* Name CD_Estrada is duplicated with the same status in Locations</p><p>
-* Name CD_Deodoro is duplicated in Customers</p><p>
-*  Null value for Fixed Demand from the customer BY_Barbatana</p><p>
-* Location BY_Conceição latitude is not in the correct format</p> </p>
+                        <h2> No errors were founded </h2>
+                        <p>  </p>
+                        <h2> No alerts were founded </h2>
+                        <p>  </p>
                         
                     
-                            <h4> Database is empty </h4>
+                            <h1> Main statistcs for Greenfield analysis </h1>
+                            <h3> Costumers fixed demands </h3>
+                            <p> * The client BY_Barbatanahas the maximum fixed demand of 500.0 </p>
+                            <p> * The client CD_Arenahas the minimum demand of 100.1 </p>
+                            <p> * The sum of all fixed demands are: 1350.1 </p>
+                            
+                            <h3> Suppliers maximum supply </h3>
+                            <p> * The supplier CD_Estradahas the maximum supply of 2212.14 </p>
+                            <p> * The client CD_Estradahas the maximum demand of 2212.14 </p>
+                            <p> * The sum of all maximum supplies are: 2212.14 </p>
+                            
+                            <h3> Mean distance between Clients and Suppliers </h3>
+                            <p> <p>* The mean distance between the customersand the supplier CD_Estrada is: 1000.69 Km</p> </p>
+                            
+                            <h1> Position analysis between Costumers and Suppliers </h1>
+                            
+                            <img src="static/fig.jpeg" />
+                            
+                            <h1> Database </h1>
+                            <h2> Customers </h2>
+                            <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Fixed Demand</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CD_Arena</td>
+      <td>100.1</td>
+      <td>-14.0613</td>
+      <td>-49.5332</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BY_Barbatana</td>
+      <td>500.0</td>
+      <td>-13.1500</td>
+      <td>-45.9332</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>BY_Conceição</td>
+      <td>300.0</td>
+      <td>-19.8591</td>
+      <td>-54.8066</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CD_Deodoro</td>
+      <td>150.0</td>
+      <td>-10.3899</td>
+      <td>-54.2793</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>BY_Conceição</td>
+      <td>300.0</td>
+      <td>-198.8591</td>
+      <td>-54.8066</td>
+    </tr>
+  </tbody>
+</table>
+                            <h2> Suppliers</h2>
+                            <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Maximum Supply</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CD_Estrada</td>
+      <td>2212.14</td>
+      <td>-15.7176</td>
+      <td>-62.3432</td>
+    </tr>
+  </tbody>
+</table>
                         
                                 
                     </body>

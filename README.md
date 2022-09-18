@@ -9,6 +9,23 @@ To execute this project, you must first create the database "greenfield_analysis
 Then, the "server.py" must be executed. The home page has the way to insert the excel file with the greenfield data. 
 
 
-## Type of errors
+## Types of errors
 
-* 
+* Divergence in the status between Customers and Locations tables
+* Divergence in the status between Suppliers and Locations tables
+* Customer without location
+* Supplier without location
+* Negative value in a customer demand
+* Negative value in a supply
+* Table missing
+* Column missing in a table
+* Status with wrong type
+
+## Types of alerts
+* All status marked as "Exclude"
+* Null value in a demand
+* Null value in a supply
+* Duplicated values in a table
+* Extra columns in a table
+* Extra tables in a excel file
+* Latitude or Longitude in a wrong format
