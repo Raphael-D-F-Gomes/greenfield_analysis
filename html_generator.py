@@ -24,18 +24,18 @@ def html_generator(alerts, errors, df_customers, df_suppliers, statistics):
 
         statistics_title = 'Main Statistics:'
         maximum_demand = f"* The client {statistics['maximum_demand']['Name']}" \
-                         f"has the maximum fixed demand of {statistics['maximum_demand']['Value']}"
+                         f" has the highest fixed demand of {statistics['maximum_demand']['Value']}"
         maximum_supply = f"* The supplier {statistics['maximum_supply']['Name']}" \
-                         f"has the maximum supply of {statistics['maximum_supply']['Value']}"
+                         f" has the highest supply of {statistics['maximum_supply']['Value']}"
         minimum_demand = f"* The client {statistics['minimum_demand']['Name']}" \
-                         f"has the minimum demand of {statistics['minimum_demand']['Value']}"
+                         f" has the lowest fixed demand of {statistics['minimum_demand']['Value']}"
         minimum_supply = f"* The client {statistics['minimum_supply']['Name']}" \
-                         f"has the maximum demand of {statistics['minimum_supply']['Value']}"
+                         f" has the lowest supply of {statistics['minimum_supply']['Value']}"
         sum_demands = f"* The sum of all fixed demands are: {statistics['sum_demand']}"
         sum_supply = f"* The sum of all maximum supplies are: {statistics['sum_supply']}"
 
         mean_distance = ''.join([f'<p>* The mean distance between the customers'
-                                 f'and the supplier {name} is: {round(statistics[name], 2)} Km</p>'
+                                 f' and the supplier {name} is: {round(statistics[name], 2)} Km</p>'
                                  for name in df_suppliers['Name'].values.tolist()])
 
         database_text = f"""
