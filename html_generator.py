@@ -11,9 +11,9 @@ def html_generator(alerts, errors, df_customers, df_suppliers, statistics):
             statistics (dict): main statistics
     """
 
-    error_title = 'Errors founded:' if errors else 'No errors were founded'
+    error_title = 'Errors found:' if errors else 'No errors were found'
     error_text = ''.join([f'<p>\n* {error}</p>' if errors else '' for error in errors])
-    alert_title = '\nAlerts founded:' if alerts else 'No alerts were founded'
+    alert_title = '\nAlerts found:' if alerts else 'No alerts were found'
     alert_text = ''.join([f'<p>\n* {alert}</p>' if alerts else '' for alert in alerts])
 
     if df_customers.empty or df_suppliers.empty:
