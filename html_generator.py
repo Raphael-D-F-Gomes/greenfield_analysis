@@ -1,4 +1,4 @@
-def html_generator(alerts, errors, df_customers, df_suppliers, statistics):
+def html_generator(alerts, errors, df_customers, df_suppliers, statistics, df_distances):
     """
         This method generates a html report with all the errors and alerts found,
         data analysis and database status
@@ -8,6 +8,7 @@ def html_generator(alerts, errors, df_customers, df_suppliers, statistics):
             errors (list): list of errors
             df_customers (pandas.DataFrame): customers information
             df_suppliers (pandas.DataFrame): suppliers information
+            df_distances (pandas.DataFrame): distances between customers and suppliers
             statistics (dict): main statistics
     """
 
@@ -49,8 +50,9 @@ def html_generator(alerts, errors, df_customers, df_suppliers, statistics):
                             <p> {minimum_supply} </p>
                             <p> {sum_supply} </p>
                             
-                            <h3> Mean distance between Clients and Suppliers </h3>
+                            <h3> Distance between Clients and Suppliers </h3>
                             <p> {mean_distance} </p>
+                            {df_distances.to_html()}
                             
                             <h1> Position analysis between Costumers and Suppliers </h1>
                             

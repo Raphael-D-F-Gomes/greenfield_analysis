@@ -29,6 +29,7 @@ def error_report():
 
         df_customers_db = pd.DataFrame()
         df_suppliers_db = pd.DataFrame()
+        df_distances = pd.DataFrame()
         statistics = {}
 
         file = request.files['upload_file']
@@ -82,9 +83,9 @@ def error_report():
             df_customers_db, df_suppliers_db = exporting_data()
 
             if not df_suppliers_db.empty and not df_customers_db.empty:
-                statistics, df_all = data_analysis(df_customers_db, df_suppliers_db)
+                statistics, df_all, df_distances = data_analysis(df_customers_db, df_suppliers_db)
 
-        html_generator(alerts, errors, df_customers_db, df_suppliers_db, statistics)
+        html_generator(alerts, errors, df_customers_db, df_suppliers_db, statistics, df_distances)
 
         os.remove(path)
 

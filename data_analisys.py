@@ -22,10 +22,11 @@ def data_analysis(df_customers: pandas.DataFrame, df_suppliers: pandas.DataFrame
 
     customers = deepcopy(df_customers)
     suppliers = deepcopy(df_suppliers)
+    df_distances = pd.DataFrame(np.ones([len(customers), len(suppliers)]), columns=suppliers['Name'].values,
+                                index=customers['Name'].values)
 
     mean_values = {}
     for supplier in suppliers.transpose():
-        distance = 0
         for customer in customers.transpose():
             pi_rad = np.pi / 180
             x1 = float(customers['Longitude'][customer]) * pi_rad
@@ -40,9 +41,10 @@ def data_analysis(df_customers: pandas.DataFrame, df_suppliers: pandas.DataFrame
 
             c = 2 * np.arctan(np.sqrt(a) / np.sqrt(1 - a))
 
-            distance += 6371 * c
+            distance = 6371 * c
+            df_distances[suppliers['Name'][supplier]][customers['Name'][customer]] = distance
 
-        mean_values[suppliers['Name'][supplier]] = distance / len(customers)
+        mean_values[suppliers['Name'][supplier]] = df_distances[suppliers['Name'][supplier]].mean()
 
     index_max_demand = customers['Fixed Demand'].idxmax()
     index_min_demand = customers['Fixed Demand'].idxmin()
@@ -75,11 +77,11 @@ def data_analysis(df_customers: pandas.DataFrame, df_suppliers: pandas.DataFrame
 
     df_all = pd.concat([customers, suppliers])
 
-    fig = px.scatter(df_all, x="Longitude", y="Latitude", color="ID", size='Size')
+    fig = px.scatter(df_all, x="Longitude", y="Latitude", color="ID", size='Size', text='Name')
 
     if os.path.exists('static/fig.jpeg'):
         os.remove('static/fig.jpeg')
 
     fig.write_image('static/fig.jpeg')
 
-    return statistics, df_all
+    return statistics, df_all, df_distances
