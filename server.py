@@ -93,9 +93,4 @@ def error_report():
 
 if __name__ == '__main__':
 
-    if len(sys.argv) == 1:
-        host_string = "0.0.0.0"
-    else:
-        host_string = sys.argv[1]
-
-    app.run(host=host_string, debug=True, threaded=False)
+    app.run(debug=True)
